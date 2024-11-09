@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
-import profile from "../app/images/profile_pic.png"
-import content from "../app/images/content_pic.jpg"
-import pfp from "../app/images/pledgepic.webp"
+import profile from "../app/images/profile_pic.png";
+import content from "../app/images/content_pic.jpg";
+import pfp from "../app/images/pledgepic.webp";
+import Link from "next/link"; // Import Link for navigation
 
 export default function Home() {
   const [liked, setLiked] = useState(false);
@@ -83,14 +84,11 @@ export default function Home() {
             >
               Post
             </button>
-
-           
-
           </article>
 
           {/* Post Feed */}
           {[...Array(2)].map((_, index) => (
-            <article key={index} className="bg-white rounded-3xl p-6 shadow-lg">
+            <article key={index} className="bg-white rounded-3x p-6 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative w-12 h-12">
                   <Image
@@ -157,18 +155,13 @@ export default function Home() {
 
         {/* Right Sidebar - Actions */}
         <aside className="col-span-12 md:col-span-3 space-y-4">
-  
-          
           {/* Notification Box */}
           <div className="bg-[#A2D2FF] p-4 rounded-xl shadow-lg mb-6">
             <h3 className="font-semibold text-[#082A69]">Notifications</h3>
             <ul className="space-y-4">
-             
               <li className="bg-white p-3 rounded-xl shadow-sm">
-                <p className="font-medium">Ryan has approved your 'Sunrise with Pledges' event</p>
-
+                <p className="font-medium">Exec has approved your 'Sunrise with Pledges' event</p>
               </li>
-
             </ul>
           </div>
         </aside>
