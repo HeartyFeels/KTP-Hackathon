@@ -7,11 +7,11 @@ const Navbar: FC = () => {
     <nav className="bg-white border-b p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and KTPledge text close together */}
-        <div className="flex items-center space-x-2">
-          <Image src={logo} alt="KTP Logo" className="h-9 w-9" />
-          <div className="text-blue-600 font-bold text-xl">KTPledge</div>
+        <div className="flex items-center space-x-3">
+          <Image src={logo} alt="KTP Logo" className="h-12 w-12" />
+          <div className="text-[#205eb3] font-bold text-xl">KTPledge</div> {/* Corrected color class */}
         </div>
-        <ul className="flex space-x-6">
+        <ul className="flex space-x-7">
           <li><a href="/logo" className="text-gray-700 hover:text-blue-500"></a></li>
           <li><a href="/calendar" className="text-gray-700 hover:text-blue-500">Calendar</a></li>
           <li><a href="/workshops" className="text-gray-700 hover:text-blue-500">Workshops</a></li>
