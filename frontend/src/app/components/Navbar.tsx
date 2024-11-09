@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { FC } from 'react';
 
 const Navbar: FC = () => {
@@ -7,12 +6,12 @@ const Navbar: FC = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-lg font-bold">KTP Logo</div>
         <ul className="flex space-x-6">
-          <li><Link href="/logo"><a className="text-gray-700 hover:text-blue-500">Logo</a></Link></li>
-          <li><Link href="/calendar"><a className="text-gray-700 hover:text-blue-500">Calendar</a></Link></li>
-          <li><Link href="/workshops"><a className="text-gray-700 hover:text-blue-500">Workshops</a></Link></li>
-          <li><Link href="/leaderboard"><a className="text-gray-700 hover:text-blue-500">Leaderboard</a></Link></li>
-          <li><Link href="/helpful-links"><a className="text-gray-700 hover:text-blue-500">Helpful Links</a></Link></li>
-          <li><Link href="/account"><a className="text-gray-700 hover:text-blue-500">Account</a></Link></li>
+          <li><a href="/logo" className="text-gray-700 hover:text-blue-500"></a></li>
+          <li><a href="/calendar" className="text-gray-700 hover:text-blue-500">Calendar</a></li>
+          <li><a href="/workshops" className="text-gray-700 hover:text-blue-500">Workshops</a></li>
+          <li><a href="/leaderboard" className="text-gray-700 hover:text-blue-500">Leaderboard</a></li>
+          <li><a href="/helpful-links" className="text-gray-700 hover:text-blue-500">Helpful Links</a></li>
+          <li><a href="/account" className="text-gray-700 hover:text-blue-500">Account</a></li>
         </ul>
       </div>
     </nav>
