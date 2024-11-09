@@ -4,7 +4,7 @@ import logo from '../images/logo.png'; // This is fine as-is
 
 const Navbar: FC = () => {
   return (
-    <nav className="bg-white border-b p-4 shadow-md">
+    <nav className="bg-white border-b p-4 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and KTPledge text close together */}
         <div className="flex items-center space-x-3">
