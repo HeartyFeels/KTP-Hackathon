@@ -1,15 +1,27 @@
+"use client";
+import { useState } from 'react';
 import { NextPage } from 'next';
 import Navbar from '../components/Navbar';
 
 const Account: NextPage = () => {
+  // State to track the checked items (whether a task is checked or not)
+  const [checkedTasks, setCheckedTasks] = useState<{ [key: string]: boolean }>({});
+
+  // Handle checkbox change
+  const handleCheckboxChange = (taskId: string) => {
+    setCheckedTasks((prev) => ({
+      ...prev,
+      [taskId]: !prev[taskId],  // Toggle the checked state of the task
+    }));
+  };
+
   return (
     <>
       <Navbar />
 
       <main className="flex bg-[#082A69]">
         {/* Left-hand Content Container (Fixed Width) */}
-        
-        <div className="w-1/3 h-[500px] p-8 bg-white shadow-md rounded-lg mx-4 mt-20 relative z-10">
+        <div className="w-1/3 h-[650px] p-8 bg-white shadow-md rounded-lg mx-4 mt-20 relative z-10">
           <div className="flex justify-center mt-8 relative">
             {/* Profile Picture Circle */}
             <div className="w-48 h-48 absolute top-1/2 transform -translate-y-1/2 border-4 border-white rounded-full overflow-hidden">
@@ -47,66 +59,73 @@ const Account: NextPage = () => {
               <div>60 points</div>
             </div>
           </div>
-    <div className="text-center pt-4 mb-4">
+          <div className="text-center pt-4 mb-4">
     <div className="font-bold inline-block mr-2 text-[#082A69] text-[20px]">Email:</div> 
     <div className="inline-block text-[#082A69] text-[20px]">sarasmith@uga.edu</div> 
     </div>
-    <div className="text-center mb-4">
+    <div className="text-center pt-4 mb-4">
     <div className="font-bold inline-block mr-2 text-[#082A69] text-[20px]">Major:</div> 
-    <div className="inline-block text-[#082A69] text-[20px]">Computer Science</div>
+    <div className="inline-block text-[#082A69] text-[20px]">Computer Science</div> 
     </div>
-    <div className="text-center mb-4">
-    <div className="font-bold inline-block mr-2 text-[#082A69] text-[20px]">Linkedin</div> 
-    <div className="inline-block text-[#082A69] text-[20px]">not attached</div>
+    <div className="text-center pt-4 mb-4">
+    <div className="font-bold inline-block mr-2 text-[#082A69] text-[20px]">Year:</div> 
+    <div className="inline-block text-[#082A69] text-[20px]">2nd Year</div> 
     </div>
-    <div className="text-center">
+    <div className="text-center pt-4 mb-4">
+    <div className="font-bold inline-block mr-2 text-[#082A69] text-[20px]">Linkedin:</div> 
+    <div className="inline-block text-[#082A69] text-[20px]">not attached</div> 
+    </div>
+    <div className="text-center pt-4 mb-4">
     <div className="font-bold inline-block mr-2 text-[#082A69] text-[20px]">Socials:</div> 
-    <div className="text-[#082A69] text-[20px]">Insta: @ssmith</div>   
-</div>
-        </div>
-        
-
-        {/* Right-hand Checklist Section (Flex Grow) */}
+    <div className="text-[#082A69] text-[20px]">Instagram: @ssmith</div> 
+    </div>
     
+        </div>
+
+        {/* Right-hand Checklist Section */}
         <div className="flex-1 p-8 bg-white shadow-md rounded-lg mx-4 mt-20">
-  <h2 className="text-[45px] font-semibold text-[#082A69]">PLEDGE TASKS:</h2>
-  <div className="mt-4">
-    <ul className="space-y-4">  {/* Added space between the list items */}
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]">Watching the sunrise with 10 other pledges: 10 points</span>
-      </li>
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]"> Organizing a picnic: 5 points</span>
-      </li>
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]">Making cookies/hanging out: 5 points</span>
-      </li>
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]"> White Lie short KTParty: 5 points</span>
-      </li>
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]">Coffee Dates(with Pledges or Brothers): 5 points</span>
-      </li>
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]">New Weekly Dare: 10 points</span>
-      </li>
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]">Make a PledgeTok with a brother: 5 points</span>
-      </li>
-      <li className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
-        <input type="checkbox" className="mr-4 w-6 h-6" />
-        <span className="text-[25px] text-[#3c4659]">Networking call with an industry professional: 5 points</span>
-      </li>
-    </ul>
-  </div>
-</div>
+          <h2 className="text-[45px] font-semibold text-[#082A69]">PLEDGE TASKS:</h2>
+          <div className="mt-4">
+            <ul className="space-y-4">
+              {/* Loop through tasks */}
+              {[
+                { id: "task1", text: "Watching the sunrise with 10 other pledges: 10 points" },
+                { id: "task2", text: "Organizing a picnic: 5 points" },
+                { id: "task3", text: "Making cookies/hanging out: 5 points" },
+                { id: "task4", text: "White Lie short KTParty: 5 points" },
+                { id: "task5", text: "Coffee Dates(with Pledges or Brothers): 5 points" },
+                { id: "task6", text: "New Weekly Dare: 10 points" },
+                { id: "task7", text: "Make a PledgeTok with a brother: 5 points" },
+                { id: "task8", text: "Networking call with an industry professional: 5 points" }
+              ].map((task) => (
+                <li key={task.id} className="flex items-center bg-[#A2D2FF] rounded-lg p-4">
+                  <input
+                    type="checkbox"
+                    className="mr-4 w-6 h-6"
+                    onChange={() => handleCheckboxChange(task.id)}
+                    checked={checkedTasks[task.id] || false}
+                  />
+                  <span className="text-[25px] text-[#3c4659]">{task.text}</span>
+
+                  {/* Conditionally render image proof box */}
+                  {checkedTasks[task.id] && (
+                    <div className="mt-4 p-4 bg-[#f1f1f1] rounded-lg">
+                      <label htmlFor={`file-upload-${task.id}`} className="block text-[#082A69] font-semibold mb-2">Upload Image Proof:</label>
+                      <input
+                        type="file"
+                        id={`file-upload-${task.id}`}
+                        className="block mb-4 border border-gray-300 rounded-md"
+                      />
+                      <button className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-colors">
+                        Submit
+                      </button>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </main>
     </>
   );
