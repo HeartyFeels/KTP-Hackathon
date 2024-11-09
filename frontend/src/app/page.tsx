@@ -58,7 +58,7 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h3 className="font-semibold text-[#082A69]">John Smith</h3>
+                <h3 className="font-semibold text-[#082A69]">Sara Smith</h3>
                 <p className="text-sm text-gray-500">Alpha Pledge • 2h ago</p>
               </div>
             </div>
