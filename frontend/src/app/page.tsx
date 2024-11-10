@@ -11,9 +11,10 @@ export default function Home() {
   const [comment, setComment] = useState("");
   const [postContent, setPostContent] = useState(""); // To hold the content of the new post
   const [image, setImage] = useState<File | null>(null); // State for the uploaded image
-  const [posts, setPosts] = useState<{ content: string; image: string | null }[]>([
+  const [posts, setPosts] = useState<{ content: string; image: StaticImageData | string | null }[]>([
     { content: "Plotting world domination... one brainstorming session at a time. 💡🌍 #KTPleadges", image: post1 } // Default post
-  ]); // Initialize with a default post
+  ]);
+  // Initialize with a default post
 
   // Handle image upload
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -129,13 +130,14 @@ export default function Home() {
               {post.image && (
                 <div className="relative aspect-square w-full mb-4 rounded-2xl overflow-hidden">
                   <Image
-                    src={post.image}
+                    src={typeof post.image === 'string' ? post.image : post.image.src} // Handle StaticImageData correctly
                     alt="Post content"
                     fill
                     className="object-cover transition-transform hover:scale-[1.02]"
                   />
                 </div>
               )}
+
 
               <p>{post.content}</p>
 
@@ -145,7 +147,7 @@ export default function Home() {
                     onClick={() => setLiked(!liked)}
                     className="flex items-center gap-2 text-gray-600 hover:text-[#082A69] transition-colors"
                   >
-                    {liked ? '❤️' : '🤍'} {liked ? '1,234' : '1,233'}
+                    {liked ? '❤️' : '🤍'} {liked ? '14' : '13'}
                   </button>
                   <button className="flex items-center gap-2 text-gray-600 hover:text-[#082A69] transition-colors">
                     💭 12 comments
