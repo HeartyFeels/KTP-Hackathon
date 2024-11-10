@@ -48,22 +48,22 @@ export default function Home() {
             <li className="flex items-center gap-3 bg-white/90 p-3 rounded-2xl shadow-sm transition-all hover:shadow-md hover:scale-[1.02]">
               <span className="text-2xl">📢</span>
               <div>
-                <p className="font-medium">Team Meeting</p>
-                <p className="text-sm text-gray-500">Tomorrow at 2 PM</p>
+                <p className="font-medium">Field Day</p>
+                <p className="text-sm text-gray-500">Tomorrow at 1 PM</p>
               </div>
             </li>
             <li className="flex items-center gap-3 bg-white/90 p-3 rounded-2xl shadow-sm transition-all hover:shadow-md hover:scale-[1.02]">
               <span className="text-2xl">📢</span>
               <div>
-                <p className="font-medium">Web Development Workshop</p>
-                <p className="text-sm text-gray-500">Due in 3 days</p>
+                <p className="font-medium">Charades or Movie Night</p>
+                <p className="text-sm text-gray-500">Tuesday at 7pm</p>
               </div>
             </li>
             <li className="flex items-center gap-3 bg-white/90 p-3 rounded-2xl shadow-sm transition-all hover:shadow-md hover:scale-[1.02]">
               <span className="text-2xl">📢</span>
               <div>
-                <p className="font-medium">Halloween Trivia Social</p>
-                <p className="text-sm text-gray-500">Friday evening</p>
+                <p className="font-medium">AWS Workshop</p>
+                <p className="text-sm text-gray-500">Next Tuesday at 7pm</p>
               </div>
             </li>
           </ul>

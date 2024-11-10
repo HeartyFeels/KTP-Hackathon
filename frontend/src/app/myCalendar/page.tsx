@@ -34,11 +34,6 @@ const MyCalendar = () => {
         end: new Date(2024, 10, 12, 20, 0),
       },
       {
-        title: 'Social Event',
-        start: new Date(2024, 10, 14, 21, 0),
-        end: new Date(2024, 10, 14, 23, 0),
-      },
-      {
         title: 'AWS Workshop',
         start: new Date(2024, 10, 19, 19, 0),
         end: new Date(2024, 10, 19, 20, 0),
