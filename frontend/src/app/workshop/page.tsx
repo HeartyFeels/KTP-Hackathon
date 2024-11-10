@@ -1,7 +1,9 @@
 "use client";
 import { useState } from 'react';
 import { NextPage } from 'next';
+import Image from "next/image";
 import Navbar from '../components/Navbar';
+import email from "../images/emailsignature.png";
 
 const Workshop: NextPage = () => {
   const [activeTab, setActiveTab] = useState('workshops');
@@ -36,9 +38,9 @@ const Workshop: NextPage = () => {
             {activeTab === 'workshops' ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* AWS Workshop Card */}
-                <div className="bg-[#0D3B67] p-6 rounded-3xl shadow-md hover:shadow-xl transition-all transform hover:scale-105">
-                  <h3 className="text-xl font-semibold text-[#A2D2FF] mb-2">AWS Essentials</h3>
-                  <p className="text-[#E1E4E8] mb-4">Learn the basics of AWS cloud services and build scalable web applications.</p>
+                <div className="bg-[#f7f7fa] p-6 rounded-3xl shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                  <h3 className="text-xl font-semibold text-[#1F5F99] mb-2">AWS Essentials</h3>
+                  <p className="text-[#1d1e4a] mb-4">Learn the basics of AWS cloud services and build scalable web applications.</p>
                   <button
                     className="px-4 py-2 bg-[#1F5F99] text-white rounded-lg"
                     onClick={() => setShowAWSDetailed(!showAWSDetailed)}
@@ -59,9 +61,9 @@ const Workshop: NextPage = () => {
                 </div>
 
                 {/* Web Development 101 Card */}
-                <div className="bg-[#0D3B67] p-6 rounded-3xl shadow-md hover:shadow-xl transition-all transform hover:scale-105">
-                  <h3 className="text-xl font-semibold text-[#A2D2FF] mb-2">Web Development 101</h3>
-                  <p className="text-[#E1E4E8] mb-4">Get hands-on experience with HTML, CSS, and JavaScript to create modern web pages.</p>
+                <div className="bg-[#f7f7fa] p-6 rounded-3xl shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                  <h3 className="text-xl font-semibold text-[#1F5F99] mb-2">Web Development 101</h3>
+                  <p className="text-[#1d1e4a] mb-4">Get hands-on experience with HTML, CSS, and JavaScript to create modern web pages.</p>
                   <button
                     className="px-4 py-2 bg-[#1F5F99] text-white rounded-lg"
                     onClick={() => setShowWebDevDetailed(!showWebDevDetailed)}
@@ -82,22 +84,32 @@ const Workshop: NextPage = () => {
                 </div>
               </div>
             ) : (
-              <div className="bg-[#1C3D56] p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold text-[#A2D2FF] mb-4">Professional Development: Email Signature</h3>
-                <p className="text-[#E1E4E8] mb-4">Create a clean and professional email signature that reflects your personal brand.</p>
+              <div className="bg-[#f7f7fa] p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold text-[#1F5F99] mb-4">Professional Development: Email Signature</h3>
+                <p className="text-[#1d1e4a] mb-4">Create a clean and professional email signature that reflects your personal brand.</p>
                 <ul className="list-disc pl-5 space-y-2">
-                  <li className="text-[#E1E4E8]">Use simple fonts and colors to maintain professionalism.</li>
-                  <li className="text-[#E1E4E8]">Include your name, title, and contact information.</li>
-                  <li className="text-[#E1E4E8]">Add social media links if relevant, but keep it minimal.</li>
-                  <li className="text-[#E1E4E8]">Use separators like | or - for better readability.</li>
+                  <li className="text-[#1d1e4a]">
+                  <p className="mt-2">
+                        Use the following link to build your UGA email signature: <a href="https://brand.uga.edu/email-signature-builder/" target="_blank" rel="noopener noreferrer" className="text-[#1F5F99]">UGA Email Signature Builder</a>.
+                      </p>
+                  </li>
+                  <li className="text-xl font-semibold text-[#1F5F99] mb-4"> For Outlook on Windows:</li>
+                  <li className="text-[#1d1e4a]">Select New Email.</li>
+                  <li className="text-[#1d1e4a]">Select Signature then Signatures.</li>
+                  <li className="text-[#1d1e4a]">Select New, type a name for the signature and select OK</li>
+                  <li className="text-[#1d1e4a]">Under Edit Signature, copy your signature you created using UGA signature builder website</li>
+                  <li className="text-[#1d1e4a]">Select the name of your custom signature in the New Email's tab on bottom, as well as Replies.</li>
+                  <li className="text-[#1d1e4a]">Then you can close out and your signature is ready.</li>
                 </ul>
                 <div className="mt-4">
-                  <h4 className="font-semibold text-[#A2D2FF]">Example:</h4>
+                  <h4 className="font-semibold text-[#1d1e4a]">Example:</h4>
                   <div className="mt-2">
-                    <p className="font-medium text-[#A2D2FF]">John Doe | Software Developer</p>
-                    <p className="text-[#A2D2FF]">john.doe@example.com</p>
-                    <p className="text-[#A2D2FF]">+1 123-456-7890</p>
-                    <p className="text-[#A2D2FF]">LinkedIn | GitHub</p>
+                    <p className="font-semibold text-[#1d1e4a]">John Doe, Computer Science</p>
+                    <p className="text-[#1d1e4a]">Franklin College of Arts | Student</p>
+                    <p className="text-[#1d1e4a]">678 Baxter st | Athens, GA 60006</p>
+                    <p className="text-[#1d1e4a]">p: 123-456-7890</p>
+                    <p className="text-[#1d1e4a]">e: john.doe@uga.edu</p>
+                    <Image src={email} alt="email ender" className="h-15 w-22"/>
                   </div>
                 </div>
               </div>
