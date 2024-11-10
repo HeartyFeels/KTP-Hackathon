@@ -63,9 +63,14 @@ export default function LeaderboardPage() {
 
         {/* Main Container with Left, Center, and Right Panels */}
         <div className="flex justify-center w-full gap-8">
-          
-          {/* Left Empty Panel */}
-          <div className="w-1/4"></div>
+        
+          {/* Right Panel - Sara Smith's Rank */}
+          <div className="w-1/4">
+            <div className="bg-white/10 p-6 rounded-lg shadow-md text-center">
+              <h2 className="text-xl font-semibold">Current Rank</h2>
+              <p className="text-2xl font-bold mt-2">#{saraRank}</p>
+            </div>
+          </div>
           
           {/* Center Panel - Leaderboard */}
           <div className="flex flex-col items-center w-1/2">
@@ -118,13 +123,10 @@ export default function LeaderboardPage() {
             </table>
           </div>
 
-          {/* Right Panel - Sara Smith's Rank */}
-          <div className="w-1/4">
-            <div className="bg-white/10 p-6 rounded-lg shadow-md text-center">
-              <h2 className="text-xl font-semibold">Sara Smith's Current Rank</h2>
-              <p className="text-2xl font-bold mt-2">Rank #{saraRank}</p>
-            </div>
-          </div>
+          
+
+          {/* Left Empty Panel */}
+          <div className="w-1/4"></div>
           
         </div>
       </div>

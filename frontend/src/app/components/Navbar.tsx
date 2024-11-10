@@ -16,9 +16,8 @@ const Navbar: FC = () => {
         </div>
         <ul className="flex space-x-7">
           <li><a href="/calendar" className="text-gray-700 hover:text-blue-500">Calendar</a></li>
-          <li><a href="/workshop" className="text-gray-700 hover:text-blue-500">Workshops</a></li>
+          <li><a href="/workshop" className="text-gray-700 hover:text-blue-500">Workshop/Toolbox</a></li>
           <li><a href="/leaderboard" className="text-gray-700 hover:text-blue-500">Leaderboard</a></li>
-          <li><a href="/helpful-links" className="text-gray-700 hover:text-blue-500">Helpful Links</a></li>
           <li><a href="/account" className="text-gray-700 hover:text-blue-500">Account</a></li>
         </ul>
       </div>
