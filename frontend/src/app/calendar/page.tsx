@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
-import MyCalendar from '@/myCalendar/page';
+import MyCalendar from '@/app/myCalendar/page';
 
 export default function Home() {
   return (
