@@ -12,7 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         customBlue: '#06245A',
-        customLighterBlue: "#5f57df"
+        customLighterBlue: "#2469B3"
       },
     },
   },
