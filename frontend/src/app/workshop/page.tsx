@@ -48,7 +48,7 @@ const Workshop: NextPage = () => {
                     {showAWSDetailed ? 'Show Less' : 'Learn More'}
                   </button>
                   {showAWSDetailed && (
-                    <div className="mt-4 text-[#E1E4E8]">
+                    <div className="mt-4 text-[#1d1e4a]">
                       <p>
                         AWS Essentials covers a range of key cloud services like EC2, S3, Lambda, and more. These services
                         enable developers to build scalable and reliable applications in the cloud.
@@ -71,7 +71,7 @@ const Workshop: NextPage = () => {
                     {showWebDevDetailed ? 'Show Less' : 'Learn More'}
                   </button>
                   {showWebDevDetailed && (
-                    <div className="mt-4 text-[#E1E4E8]">
+                    <div className="mt-4 text-[#1d1e4a]">
                       <p>
                         In Web Development 101, you will learn the foundational skills needed to build modern, responsive
                         websites. This includes mastering HTML, CSS, and JavaScript to create dynamic and interactive web pages.
@@ -109,6 +109,7 @@ const Workshop: NextPage = () => {
                     <p className="text-[#1d1e4a]">678 Baxter st | Athens, GA 60006</p>
                     <p className="text-[#1d1e4a]">p: 123-456-7890</p>
                     <p className="text-[#1d1e4a]">e: john.doe@uga.edu</p>
+                    <br></br>
                     <Image src={email} alt="email ender" className="h-15 w-22"/>
                   </div>
                 </div>
