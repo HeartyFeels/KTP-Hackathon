@@ -3,20 +3,35 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import profile from "../app/images/profile_pic.png";
-import content from "../app/images/content_pic.jpg";
 import pfp from "../app/images/pledgepic.webp";
-import Link from "next/link"; // Import Link for navigation
+import post1 from "../app/images/post1.jpg"; // Add your placeholder image here
 
 export default function Home() {
   const [liked, setLiked] = useState(false);
   const [comment, setComment] = useState("");
   const [postContent, setPostContent] = useState(""); // To hold the content of the new post
+  const [image, setImage] = useState<File | null>(null); // State for the uploaded image
+  const [posts, setPosts] = useState<{ content: string; image: string | null }[]>([
+    { content: "Plotting world domination... one brainstorming session at a time. 💡🌍 #KTPleadges", image: post1 } // Default post
+  ]); // Initialize with a default post
+
+  // Handle image upload
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
 
   // Handle creating a new post
   const handlePostSubmit = () => {
-    if (postContent) {
-      console.log("New post submitted:", postContent);
+    if (postContent || image) {
+      const newPost = {
+        content: postContent,
+        image: image ? URL.createObjectURL(image) : null, // If there's an image, create an object URL
+      };
+      setPosts([newPost, ...posts]); // Add the new post to the list of posts
       setPostContent(""); // Clear the text area after posting
+      setImage(null); // Clear the image after posting
     }
   };
 
@@ -78,6 +93,11 @@ export default function Home() {
               placeholder="Write your post..."
               className="w-full bg-gray-50 rounded-2xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#A2D2FF] placeholder:text-gray-400 mb-4"
             />
+            <input
+              type="file"
+              onChange={handleImageUpload}
+              className="w-full mb-4 text-sm"
+            />
             <button
               onClick={handlePostSubmit}
               className="w-full bg-[#082A69] text-white rounded-2xl p-3 font-semibold hover:bg-[#A2D2FF] transition-all"
@@ -86,9 +106,9 @@ export default function Home() {
             </button>
           </article>
 
-          {/* Post Feed */}
-          {[...Array(2)].map((_, index) => (
-            <article key={index} className="bg-white rounded-3x p-6 shadow-lg">
+          {/* Dynamic Post Feed */}
+          {posts.map((post, index) => (
+            <article key={index} className="bg-white rounded-3xl p-6 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative w-12 h-12">
                   <Image
@@ -105,14 +125,19 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative aspect-square w-full mb-4 rounded-2xl overflow-hidden">
-                <Image
-                  src={content}
-                  alt="Post content"
-                  fill
-                  className="object-cover transition-transform hover:scale-[1.02]"
-                />
-              </div>
+              {/* Display Image if available */}
+              {post.image && (
+                <div className="relative aspect-square w-full mb-4 rounded-2xl overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt="Post content"
+                    fill
+                    className="object-cover transition-transform hover:scale-[1.02]"
+                  />
+                </div>
+              )}
+
+              <p>{post.content}</p>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -123,7 +148,7 @@ export default function Home() {
                     {liked ? '❤️' : '🤍'} {liked ? '1,234' : '1,233'}
                   </button>
                   <button className="flex items-center gap-2 text-gray-600 hover:text-[#082A69] transition-colors">
-                    💭 88 comments
+                    💭 12 comments
                   </button>
                 </div>
 
@@ -132,7 +157,7 @@ export default function Home() {
                   <div className="flex gap-3">
                     <div className="relative w-9 h-9">
                       <Image
-                        src={pfp}
+                        src={profile}
                         alt="Your profile"
                         width={35}
                         height={35}
@@ -154,7 +179,7 @@ export default function Home() {
         </main>
 
         {/* Right Sidebar - Actions */}
-        <aside className="col-span-12 md:col-span-3 space-y-4">
+        <aside className="col-span-12 md:col-span-3 space-y-2">
           {/* Notification Box */}
           <div className="bg-[#A2D2FF] p-4 rounded-xl shadow-lg mb-6">
             <h3 className="font-semibold text-[#082A69]">Notifications</h3>

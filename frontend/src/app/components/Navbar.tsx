@@ -11,10 +11,10 @@ const Navbar: FC = () => {
           {/* Make the logo clickable and lead to the homepage */}
           <a href="/" className="flex items-center">
             <Image src={logo} alt="KTP Logo" className="h-12 w-12" />
-            <div className="text-[#205eb3] font-bold text-xl">KTPledge</div>
+            <div className="text-[#205eb3] font-bold text-xl space-x-6 pl-6 text-[26px]">KTPledge</div>
           </a>
         </div>
-        <ul className="flex space-x-7">
+        <ul className="flex space-x-7 text-[20px]">
           <li><a href="/calendar" className="text-gray-700 hover:text-blue-500">Calendar</a></li>
           <li><a href="/workshop" className="text-gray-700 hover:text-blue-500">Workshop/Toolbox</a></li>
           <li><a href="/leaderboard" className="text-gray-700 hover:text-blue-500">Leaderboard</a></li>
