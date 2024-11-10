@@ -4,13 +4,16 @@ import Navbar from "./components/Navbar";
 import { useState } from "react";
 import profile from "../app/images/profile_pic.png";
 import pfp from "../app/images/pledgepic.webp";
+import post1 from "../app/images/post1.jpg"; // Add your placeholder image here
 
 export default function Home() {
   const [liked, setLiked] = useState(false);
   const [comment, setComment] = useState("");
   const [postContent, setPostContent] = useState(""); // To hold the content of the new post
   const [image, setImage] = useState<File | null>(null); // State for the uploaded image
-  const [posts, setPosts] = useState<{ content: string; image: string | null }[]>([]); // To store all posts
+  const [posts, setPosts] = useState<{ content: string; image: string | null }[]>([
+    { content: "Plotting world domination... one brainstorming session at a time. 💡🌍 #KTPleadges", image: post1 } // Default post
+  ]); // Initialize with a default post
 
   // Handle image upload
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -142,7 +145,7 @@ export default function Home() {
                     onClick={() => setLiked(!liked)}
                     className="flex items-center gap-2 text-gray-600 hover:text-[#082A69] transition-colors"
                   >
-                    {liked ? '❤️' : '🤍'} {liked ? '1,234' : '30'}
+                    {liked ? '❤️' : '🤍'} {liked ? '1,234' : '1,233'}
                   </button>
                   <button className="flex items-center gap-2 text-gray-600 hover:text-[#082A69] transition-colors">
                     💭 12 comments
@@ -154,7 +157,7 @@ export default function Home() {
                   <div className="flex gap-3">
                     <div className="relative w-9 h-9">
                       <Image
-                        src={pfp}
+                        src={profile}
                         alt="Your profile"
                         width={35}
                         height={35}
@@ -176,7 +179,7 @@ export default function Home() {
         </main>
 
         {/* Right Sidebar - Actions */}
-        <aside className="col-span-12 md:col-span-3 space-y-4">
+        <aside className="col-span-12 md:col-span-3 space-y-2">
           {/* Notification Box */}
           <div className="bg-[#A2D2FF] p-4 rounded-xl shadow-lg mb-6">
             <h3 className="font-semibold text-[#082A69]">Notifications</h3>
