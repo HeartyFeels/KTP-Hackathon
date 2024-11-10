@@ -131,6 +131,19 @@ const Account: NextPage = () => {
                     checked={checkedTasks[task.id] || false}
                   />
                   <span className="text-[25px] text-[#3c4659]">{task.text}</span>
+                  {checkedTasks[task.id] && (
+                    <div className="mt-4 p-4 bg-[#f1f1f1] rounded-lg">
+                      <label htmlFor={`file-upload-${task.id}`} className="block text-[#082A69] font-semibold mb-2">Upload Image Proof:</label>
+                      <input
+                        type="file"
+                        id={`file-upload-${task.id}`}
+                        className="block mb-4 border border-gray-300 rounded-md"
+                      />
+                      <button className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-colors">
+                        Submit
+                      </button>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
